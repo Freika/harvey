@@ -1,0 +1,6 @@
+<h2>New realm</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: realm_path(@conn, :create) %>
+
+<%= link "Back", to: realm_path(@conn, :index) %>

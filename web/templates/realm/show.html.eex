@@ -1,0 +1,13 @@
+<h2>Show realm</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @realm.name %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: realm_path(@conn, :edit, @realm) %>
+<%= link "Back", to: realm_path(@conn, :index) %>

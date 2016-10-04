@@ -16,7 +16,8 @@ defmodule Harvey.Router do
   scope "/", Harvey do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", RealmController, :index
+    resources "/realms", RealmController
   end
 
   # Other scopes may use custom stacks.

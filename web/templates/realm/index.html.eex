@@ -1,0 +1,26 @@
+<h2>Listing realms</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for realm <- @realms do %>
+    <tr>
+      <td><%= realm.name %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: realm_path(@conn, :show, realm), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: realm_path(@conn, :edit, realm), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: realm_path(@conn, :delete, realm), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New realm", to: realm_path(@conn, :new) %>
